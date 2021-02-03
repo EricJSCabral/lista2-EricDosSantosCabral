@@ -41,6 +41,11 @@ public class Orcamento {
 		this.tipo = tipo;
 	}
 
+	public void status() {
+		System.out.println("\nTipo: " + this.getTipo());
+		System.out.println("Descrição: " + this.getDescricao());
+	    System.out.println("R$: " + this.getValor() + " Em: " + this.getData());
+	}
 
 
 }

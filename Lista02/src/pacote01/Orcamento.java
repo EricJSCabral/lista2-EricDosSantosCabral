@@ -8,6 +8,13 @@ public class Orcamento {
     private BigDecimal valor;
     private String descricao;
     private TipoTransacao tipo;
+    
+    public Orcamento(LocalDateTime d, String s, TipoTransacao t, BigDecimal v) {
+    	   this.setData(d);
+    	   this.setDescricao(s);
+    	   this.setTipo(t);
+    	   this.setValor(v);
+    }
 
     public LocalDateTime getData() {
 		return data;

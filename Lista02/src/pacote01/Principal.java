@@ -8,12 +8,7 @@ public class Principal {
     public static void main(String[] args) {
      
     	//Instanciando objeto salário.
-      Orcamento salario = new Orcamento(); 
-      salario.setData(LocalDateTime.now());
-      salario.setDescricao("Salário");
-      salario.setTipo(TipoTransacao.RECEITA);
-      salario.setValor(new BigDecimal("3000.00"));
-      
+      Orcamento salario = new Orcamento(LocalDateTime.now(), "Salário", TipoTransacao.RECEITA, new BigDecimal("3000")); 
       BigDecimal saldo = salario.getValor();
 
       salario.status();
@@ -22,23 +17,14 @@ public class Principal {
          	
     	
       //instanciando o objeto supermercado e atribuindo valores pelos métodos setters.
-      Orcamento mercado = new Orcamento();  
-      mercado.setData(LocalDateTime.now());
-      mercado.setDescricao("Gastos com a compra do mês no mercado Extra");
-      mercado.setTipo(TipoTransacao.DESPESA);
-      mercado.setValor(new BigDecimal("500.00"));
-      
+      Orcamento mercado = new Orcamento(LocalDateTime.now(), "Gastos com a compra do mês no mercado Extra", TipoTransacao.DESPESA, 
+    		  new BigDecimal("500.00") );  
       saldo = saldo.subtract(mercado.getValor());
       mercado.status();
       System.out.println("Seu saldo atual é: R$ " + saldo);
             
       //instnaciando objeto ContaLuz
-      Orcamento contaLuz = new Orcamento();
-      contaLuz.setData(LocalDateTime.now());
-      contaLuz.setDescricao("Pagamento da conta de Luz");
-      contaLuz.setTipo(TipoTransacao.DESPESA);
-      contaLuz.setValor(new BigDecimal("150.00"));
-      
+      Orcamento contaLuz = new Orcamento(LocalDateTime.now(),"Pagamento da conta de Luz", TipoTransacao.DESPESA, new BigDecimal("150.00"));    
       saldo = saldo.subtract(contaLuz.getValor());
       contaLuz.status();
       System.out.println("Seu saldo atual é: R$ " + saldo);
